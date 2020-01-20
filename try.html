@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Illuminance</title>
+	<script type="text/javascript"> 
+		const updateLux = async(url,time,lux) => {
+			const sensorData = await fetch(url)
+									 .then(response => response.text())
+			
+			const target = document.getElementById(element)
+			
+			target.innerHTML = `<h1>${sensorData}</h1>`
+			}
+		
+	</script>
+	<meta http-equiv="refresh" content="6">
+</head>
+<body onload="updateLux('/lux', 'time', 'lux')">
+	<div class="title">Illuminance Sensor Data display system</div>
+	<div id="data">Sensor Data</div>
+	<p id="Date and time">{{values[0]}}</p>
+	<p id="lux">Lux: {{values[1]}}</p>
+   
+   
+</body>
+
+<style type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+body{
+	background-color: black;
+}
+
+div{
+	text-align: center;
+	color: 	#FF1493;
+	font-size: 34px;
+}
+
+p{
+	margin: 0 auto;
+	padding: 10px 10px 10px 10px;
+	text-align: center;
+	color: 	#000080;
+	font-size: 35px;
+	font-family:'Roboto', sans-serif;
+	font-size: bold;
+}
+
+div + .title{
+	text-align: center;
+	padding-bottom: 20px;
+	color: blue;
+	font-size: 40px;
+}
+</style>
+</html>
+
+
